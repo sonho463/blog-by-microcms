@@ -1,7 +1,8 @@
 import React from "react"
 
-import "../styles/global.css";
+// importの順番大事！！
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../styles/global.css";
 
 
 export default function Home() {
