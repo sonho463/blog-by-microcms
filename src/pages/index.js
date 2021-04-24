@@ -1,12 +1,37 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { getImage } from "gatsby-plugin-image"
+import { convertToBgImage } from "gbimage-bridge"
+import BackgroundImage from "gatsby-background-image"
 
 // importの順番大事！！
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../styles/global.css"
 
 export default function Home() {
+  const { placeholderImage } = useStaticQuery(
+    graphql`
+      query {
+        placeholderImage: file(relativePath: { eq: "home-bg.jpg" }) {
+          childImageSharp {
+            gatsbyImageData(
+              width: 200
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+      }
+    `
+  )
+
+  const image = getImage(placeholderImage)
+
+  // Use like this:
+  const bgImage = convertToBgImage(image)
+
   return (
     <>
       <meta charSet="utf-8" />
@@ -34,6 +59,7 @@ export default function Home() {
       {/* Custom styles for this template */}
       {/* <link href="css/clean-blog.min.css" rel="stylesheet" /> */}
       {/* Navigation */}
+
       <nav
         className="navbar navbar-expand-lg navbar-light fixed-top"
         id="mainNav"
@@ -65,33 +91,29 @@ export default function Home() {
               <li className="nav-item">
                 <Link to="/contact">Contact</Link>
               </li>
+              <li className="nav-item">
+                <Link to="/bgimg">BG-IMG</Link>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
+
       {/* Page Header */}
-      <header className="masthead">
-        <div className="jumbotron">
-          <StaticImage
-            src="../images/home-bg.jpg"
-            alt="Background"
-            placeholder="blurred"
-          />
-        </div>
-        <div className="overlay" />
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 col-md-10 mx-auto">
-              <div className="site-heading">
-                <h1>Clean Blog</h1>
-                <span className="subheading">
-                  A Blog Theme by Start Bootstrap
-                </span>
-              </div>
-            </div>
+      <BackgroundImage
+        Tag="section"
+        // Spread bgImage into BackgroundImage:
+        {...bgImage}
+        preserveStackingContext
+        className=""
+      >
+        <header className="masthead">
+          <div className="site-heading">
+            <h1>Clean Blog</h1>
+            <span className="subheading">A Blog Theme by Start Bootstrap</span>
           </div>
-        </div>
-      </header>
+        </header>
+      </BackgroundImage>
       {/* Main Content */}
       <div className="container">
         <div className="row">
