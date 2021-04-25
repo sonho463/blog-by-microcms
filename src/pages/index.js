@@ -17,7 +17,7 @@ export default function Home() {
         placeholderImage: file(relativePath: { eq: "home-bg.jpg" }) {
           childImageSharp {
             gatsbyImageData(
-              width: 200
+              width: 1000
               placeholder: BLURRED
               formats: [AUTO, WEBP, AVIF]
             )
@@ -189,16 +189,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <figure>
-        <StaticImage
-          src="../images/home-bg.jpg"
-          alt="Background"
-          placeholder="blurred"
-          // layout="fixed"
-          width={200}
-          height={200}
-        />
-      </figure>
       <hr />
       {/* Footer */}
       <footer>

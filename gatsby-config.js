@@ -8,6 +8,12 @@ const path = require(`path`)
 
 module.exports = {
   /* Your site config here */
+	siteMetadata: {
+			title: `Blog By microCMS`,
+			siteUrl: 'https://blog-by-microcms.netlify.app',
+			description: `これは、GatsbyとmicroCMSで作ったブログです。`,
+			author: `そんほんす`
+	},
   plugins: [
 		`gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
