@@ -1,10 +1,12 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
+
 
 // importの順番大事！！
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -93,6 +95,9 @@ export default function Home() {
               </li>
               <li className="nav-item">
                 <Link to="/bgimg">BG-IMG</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/img-lesson">Img-lesson</Link>
               </li>
             </ul>
           </div>
