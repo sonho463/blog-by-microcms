@@ -3,10 +3,6 @@ import { StaticImage } from "gatsby-plugin-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
-import { getImage } from "gatsby-plugin-image"
-import { convertToBgImage } from "gbimage-bridge"
-import BackgroundImage from "gatsby-background-image"
-
 
 // importの順番大事！！
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -32,7 +28,6 @@ export default function Home() {
   const image = getImage(placeholderImage)
 
   // Use like this:
-  const bgImage = convertToBgImage(image)
 
   return (
     <>
@@ -105,20 +100,19 @@ export default function Home() {
       </nav>
 
       {/* Page Header */}
-      <BackgroundImage
-        Tag="section"
-        // Spread bgImage into BackgroundImage:
-        {...bgImage}
-        preserveStackingContext
-        className=""
-      >
-        <header className="masthead">
-          <div className="site-heading">
-            <h1>Clean Blog</h1>
-            <span className="subheading">A Blog Theme by Start Bootstrap</span>
-          </div>
-        </header>
-      </BackgroundImage>
+      <header className="masthead">
+        <StaticImage
+          className="bg-image"
+          src="../images/home-bg.jpg"
+          alt="Background"
+          placeholder="blurred"
+          layout="fixed"
+        />
+        <div className="site-heading">
+          <h1>Clean Blog</h1>
+          <span className="subheading">A Blog Theme by Start Bootstrap</span>
+        </div>
+      </header>
       {/* Main Content */}
       <div className="container">
         <div className="row">
