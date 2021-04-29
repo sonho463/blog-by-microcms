@@ -5,6 +5,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
+import Seo from "../components/Seo"
+
 
 // importの順番大事！！
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -34,14 +36,15 @@ export default function Home() {
 
   return (
     <>
+
       <meta charSet="utf-8" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      <meta name="description" content />
-      <meta name="author" content />
-      <title>My blog</title>
+      {/* <meta name="description" content /> */}
+      {/* <meta name="author" content /> */}
+      {/* <title>My blog</title> */}
       {/* Bootstrap core CSS */}
       {/* <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> */}
       {/* Custom fonts for this template */}
@@ -59,6 +62,9 @@ export default function Home() {
       {/* Custom styles for this template */}
       {/* <link href="css/clean-blog.min.css" rel="stylesheet" /> */}
       {/* Navigation */}
+
+			<Seo />
+
 
       <nav
         className="navbar navbar-expand-lg navbar-light fixed-top"

@@ -179,7 +179,7 @@ header.masthead {
 	opacity: 0.4;
 }
 
-header.masthead .overlay {
+/* header.masthead .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -187,7 +187,7 @@ header.masthead .overlay {
   width: 100%;
   background-color: #212529;
   opacity: 1;
-}
+} */
 
 header.masthead .page-heading,
 header.masthead .post-heading,

@@ -10,11 +10,12 @@ module.exports = {
   /* Your site config here */
 	siteMetadata: {
 			title: `Blog By microCMS`,
-			siteUrl: 'https://blog-by-microcms.netlify.app',
 			description: `これは、GatsbyとmicroCMSで作ったブログです。`,
-			author: `そんほんす`
+			lang: `ja`
 	},
+	/* Plugin settings */
   plugins: [
+		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
