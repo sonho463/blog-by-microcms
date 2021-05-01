@@ -1,5 +1,4 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
@@ -83,16 +82,16 @@ export default function Home() {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to="/">Home</Link>
+                <Link to="/" alt="">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/about">About</Link>
+                <Link to="/about" alt="">About</Link>
               </li>
               <li className="nav-item">
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact" alt="">Contact</Link>
               </li>
               <li className="nav-item">
-                <Link to="/bgimg">BG-IMG</Link>
+                <Link to="/bgimg" alt="">BG-IMG</Link>
               </li>
             </ul>
           </div>

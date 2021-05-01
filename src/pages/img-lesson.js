@@ -3,7 +3,6 @@ import { StaticImage } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
-import { BackgroundImage } from "gatsby-background-image"
 
 // importの順番大事！！
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -12,7 +11,6 @@ import "../styles/global.css"
 export default function ImgLesson({ data }) {
 
 	const image = getImage(data.file)
-	const bgImage = convertToBgImage(image)
 
   return (
     <container>
