@@ -9,9 +9,9 @@ const path = require(`path`)
 module.exports = {
   /* Your site config here */
 	siteMetadata: {
-			title: `Blog By microCMS`,
+			title: `BlogBymicroCMS`,
 			description: `これは、GatsbyとmicroCMSで作ったブログです。`,
-			lang: `ja`
+			lang: `ja`,
 	},
 	/* Plugin settings */
   plugins: [

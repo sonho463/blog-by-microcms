@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
-import Seo from "../components/Seo"
+import Seo from "../components/seo"
 
 // importの順番大事！！
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -15,9 +15,9 @@ export default function Home() {
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      {/* <meta name="description" content />
-      <meta name="author" content />
-      <title></title> */}
+      {/* <meta name="description" content /> */}
+      {/* <meta name="author" content /> */}
+      {/* <title>ABOUT</title> */}
       {/* Bootstrap core CSS */}
       {/* <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> */}
       {/* Custom fonts for this template */}
@@ -35,11 +35,13 @@ export default function Home() {
       {/* Custom styles for this template */}
       {/* <link href="css/clean-blog.min.css" rel="stylesheet" /> */}
       {/* Navigation */}
-      <Seo
-				pagetitle = "Contact"
-				pagedesc = "これはコンタクトページ"
+
+			<Seo
+				pagetitle = "About"
+				pagedesc = "ここはblogのアバウトページです"
 			/>
-			<nav
+
+      <nav
         className="navbar navbar-expand-lg navbar-light fixed-top"
         id="mainNav"
       >
@@ -81,7 +83,7 @@ export default function Home() {
           <div className="row">
             <div className="col-lg-8 col-md-10 mx-auto">
               <div className="site-heading">
-                <h1>Contact</h1>
+                <h1>About</h1>
                 <span className="subheading">
                   A Blog Theme by Start Bootstrap
                 </span>

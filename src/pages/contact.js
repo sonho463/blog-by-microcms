@@ -1,53 +1,21 @@
 import React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
-import { graphql, useStaticQuery } from "gatsby"
-import { getImage } from "gatsby-plugin-image"
-import { convertToBgImage } from "gbimage-bridge"
-import BackgroundImage from "gatsby-background-image"
-import Seo from "../components/Seo"
-
+import Seo from "../components/seo_old"
 
 // importの順番大事！！
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../styles/global.css"
 
 export default function Home() {
-  const { placeholderImage } = useStaticQuery(
-    graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "home-bg.jpg" }) {
-          childImageSharp {
-            gatsbyImageData(
-              width: 1000
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-      }
-    `
-  )
-
-  const image = getImage(placeholderImage)
-
-  // Use like this:
-  const bgImage = convertToBgImage(image)
-
   return (
     <>
-
       <meta charSet="utf-8" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      {/* <meta name="description" content /> */}
-      {/* <meta name="author" content /> */}
-      {/* <title>My blog</title> */}
-      {/* Bootstrap core CSS */}
-      {/* <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> */}
-      {/* Custom fonts for this template */}
-      {/* <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" /> */}
+
       <link
         href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
         rel="stylesheet"
@@ -58,14 +26,12 @@ export default function Home() {
         rel="stylesheet"
         type="text/css"
       />
-      {/* Custom styles for this template */}
-      {/* <link href="css/clean-blog.min.css" rel="stylesheet" /> */}
-      {/* Navigation */}
 
-			<Seo />
-
-
-      <nav
+      <Seo
+				pagetitle = "Contact"
+				pagedesc = "これはコンタクトページ"
+			/>
+			<nav
         className="navbar navbar-expand-lg navbar-light fixed-top"
         id="mainNav"
       >
@@ -88,37 +54,34 @@ export default function Home() {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to="/" alt="">Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" alt="">About</Link>
+                <Link to="/about">About</Link>
               </li>
               <li className="nav-item">
-                <Link to="/contact" alt="">Contact</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/bgimg" alt="">BG-IMG</Link>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-
       {/* Page Header */}
-      <BackgroundImage
-        Tag="section"
-        // Spread bgImage into BackgroundImage:
-        {...bgImage}
-        preserveStackingContext
-        className=""
-      >
-        <header className="masthead">
-          <div className="site-heading">
-            <h1>Clean Blog</h1>
-            <span className="subheading">A Blog Theme by Start Bootstrap</span>
+      <header className="masthead">
+        <div className="overlay" />
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 col-md-10 mx-auto">
+              <div className="site-heading">
+                <h1>Contact</h1>
+                <span className="subheading">
+                  A Blog Theme by Start Bootstrap
+                </span>
+              </div>
+            </div>
           </div>
-        </header>
-      </BackgroundImage>
+        </div>
+      </header>
       {/* Main Content */}
       <div className="container">
         <div className="row">
@@ -194,6 +157,16 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <figure>
+        <StaticImage
+          src="../images/home-bg.jpg"
+          alt="Background"
+          placeholder="blurred"
+          // layout="fixed"
+          width={200}
+          height={200}
+        />
+      </figure>
       <hr />
       {/* Footer */}
       <footer>
