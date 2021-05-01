@@ -12,6 +12,7 @@ module.exports = {
 			title: `BlogBymicroCMS`,
 			description: `これは、GatsbyとmicroCMSで作ったブログです。`,
 			lang: `ja`,
+			siteUrl: `https://blog-by-microcms.netlify.app/`,
 	},
 	/* Plugin settings */
   plugins: [
